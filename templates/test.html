@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/static/test.css">
+    </head>
+
+    <center>
+    <div class="nav">
+        <ul id="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul> 
+    </div>
+    </center>
+
+    <body>
+        <h1><center><img src="/static/site-images/cancelled.jpg"></center></h1>
+        <center>
+        <form method="post">
+            <input type="text"  name="name" class="question" id="nme" required autocomplete="off">
+            <label for="nme"><span>Who's cancelled?</span></label>
+            <button type="submit" class="button-55">Search</button>
+        </form>
+        </center>
+        <p></p>
+        <center>
+            {% for item in data %}
+            <tr>
+                <td> {{item[0]}} <br> {{item[1]}} <br> <img src="{{ celeb_image }}"> </td>
+                </br>
+            </tr>
+            {% endfor %}
+        </center>
+    </body>
+</html>
